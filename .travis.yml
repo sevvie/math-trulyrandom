@@ -5,4 +5,5 @@ perl6:
   - 2015.09
 
 install:
-  - gcc -o truerand.o truerand.c -I.
+  - gcc -c -fPIC truerand.c -o truerand.o
+  - gcc -shared -Wl,-soname,libtruerand.so -o libtruerand.so truerand.o
