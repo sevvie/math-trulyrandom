@@ -17,9 +17,21 @@ unit module Math::TrulyRandom;
 use NativeCall;
 
 =head2 truly-random-value()
-returns a truly-random 16-bit integer.
+returns a truly-random 16-bit integer. Aliases: I<truly_random_value> I<truerand>
 
 sub truly-random-value
+    is native('truerand')
+    is export(:func) {
+      ...
+    }
+
+sub truly_random_value
+    is native('truerand')
+    is export(:func) {
+      ...
+    }
+
+sub true-rand
     is native('truerand')
     is export(:func) {
       ...

@@ -120,3 +120,7 @@ int n;
 	} while (v <= slop);
 	return v % n;
 }
+
+int main() {
+  return 0;
+}
