@@ -1,0 +1,17 @@
+{ "name": "Math-TrulyRandom",
+  "version": "*",
+  "description": "Provides a method for producing truly random numbers.",
+  "provides": {
+    "Math::TrulyRandom": "lib/Math/TrulyRandom.pm6"
+  },
+  "authors": {
+    "Jennie 'sevvie' Rose (Perl6 implementation)",
+    "Gary Howland (Perl5 implementation)",
+    "Matt Blaze & Don Mitchell (AT&T)"
+  },
+  "support": {
+    "bugtracker": "https://github.com/sevvie/math-trulyrandom/issues",
+    "source": "git://github.com/sevvie/math-trulyrandom.git"
+  },
+  "source-url": "git://github.com/sevvie/math-trulyrandom.git"
+}
