@@ -5,5 +5,5 @@ perl6:
   - 2015.09
 
 install:
-  - gcc -c -fPIC truerand.c -o truerand.o
-  - gcc -shared -Wl,-soname,libtruerand.so -o libtruerand.so truerand.o
+  - gcc -c -fPIC -O0 getentropy.c -o getentropy.o
+  - gcc -shared -Wl,-soname,libgetentropy.so -o libgetentropy.so getentropy.o
