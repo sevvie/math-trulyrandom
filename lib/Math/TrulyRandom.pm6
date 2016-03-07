@@ -52,26 +52,24 @@ sub copy-carray-to-buf(CArray $array, Int $no-elems) returns Buf {
 
 
 
-sub truly-random-buf(size_t $buflen) returns Buf is export {
+sub truly-random-buf(size_t $buflen) returns Buf is export(:func) {
     my $bytes = CArray[int8].new;
     $bytes[$buflen-1] = 0;
     getentropy_buf($bytes, $buflen);
     copy-carray-to-buf($bytes, $buflen);
 }
 
-sub truly-random-value() returns Int is export {
+sub truly-random-value() returns Int is export(:func) {
     getentropy_random();
 }
 
-sub truly-random-uniform(uint32 $upper_bound) returns Int is export {
+sub truly-random-uniform(uint32 $upper_bound) returns Int is export(:func) {
     getentropy_uniform($upper_bound);
 }
 
 =head2 BUGS
 SO MANY. See L<http://github.com/sevvie/Math-TrulyRandom/> for more
-information. Upstream: OpenBSD/LibreSSL's getentropy_osx.c does not
-actually utilize a sysctl as it claims to; we only draw from
-/dev/urandom and fail otherwise.
+information. Will fail on OS X if we can't use /dev/urandom.
 
 =head2 COPYRIGHT
 This implementation is derived from OpenBSD/LibreSSL code written by
